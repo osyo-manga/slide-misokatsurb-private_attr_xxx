@@ -174,7 +174,7 @@ pp User.private_instance_methods(false)
 - - -
 
 * class スコープ内ではインスタンスメソッドを private 化する
-* クラスメソッドを private 化する場合はスコープを変更する
+* クラスメソッドを private 化する場合は特異クラスをオープンする
 
 ```ruby
 class X
@@ -184,7 +184,7 @@ class X
   # これはインスタンスメソッドを private 化するのでエラーになる
   private :hoge
 
-  # 特異クラスのスコープ内で private 化する
+  # 特異クラスをオープンしてその中で private 化する
   class <<self
     # ここは X クラスの特異クラスのスコープになるので
     # X クラスの特異クラスのメソッドがプライベート化される
